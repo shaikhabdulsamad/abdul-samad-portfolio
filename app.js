@@ -60,6 +60,18 @@ document.getElementById('toggleBtn').addEventListener('click', function() {
     }
 });
 
+document.addEventListener('click', function (event) {
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    var navbarCollapse = document.querySelector('#navbarNav');
+
+    if (navbarCollapse.classList.contains('show') && !navbarToggler.contains(event.target) && !navbarCollapse.contains(event.target)) {
+        var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+        bsCollapse.hide();
+    }
+});
+
 
 
 
